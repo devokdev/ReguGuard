@@ -1,0 +1,7 @@
+persona: auditor
+description: Strict verification and provenance inquiry
+variants:
+  terse: "Provide source citations for e-invoice mandate."
+  verbose: "Please furnish the exact gazette paragraph, notification date, and statutory authority confirming the turnover threshold reduction."
+  structured_form: "Audit Check: Section Citation; Proof: Exact quote; Confidence: Required > 0.90"
+

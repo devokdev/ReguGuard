@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE-AUDIT-PROV",
+  "trace_id": "trace-bb2931a2",
+  "sme_id": "SME-01",
+  "verdict": "impacted",
+  "confidence": 0.95,
+  "headline": "Potential regulatory impact detected \u2014 human review recommended",
+  "evidence_chain": [
+    {
+      "claim": "Statutory rules under notif_10_2023 analyzed against SME operations.",
+      "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+      "source_doc_id": "notif_10_2023",
+      "section": "Para 2",
+      "verified": true,
+      "producing_agent": "EvidenceVerificationCrew",
+      "span_id": "c0e68000"
+    }
+  ],
+  "action_plan": {
+    "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+    "owner": "Chief Financial Officer / Accounts Head",
+    "deadline": "2023-08-01",
+    "days_remaining": -1186,
+    "priority": "high"
+  },
+  "total_latency_s": 1.955,
+  "total_tokens": 1422
+}

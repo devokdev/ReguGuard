@@ -1,0 +1,7 @@
+persona: consultant
+description: Multi-client batch assessment query
+variants:
+  terse: "Batch check SME cohort against 5 Cr threshold."
+  verbose: "We manage 12 SME clients across states. We require a triage of who crosses the 5 crore threshold effective 1st August 2023."
+  structured_form: "Cohort: SMEs 01-12; Action: Triage impacted entities; Target: Notification 10/2023"
+

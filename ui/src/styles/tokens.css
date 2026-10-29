@@ -1,0 +1,51 @@
+/* ReguGuard Design Tokens — "Matte Printed Paper, Editorial, Calm" */
+:root {
+  /* Color Palette */
+  --color-paper: #EDE9E0;
+  --color-surface: #E4DFD3;
+  --color-surface-hover: #DDD7C9;
+  --color-ink: #1C1B19;
+  --color-muted: #6B675F;
+  --color-rule: #CFC9BC;
+  --color-rule-light: #DDD8CD;
+
+  /* Semantic Accents */
+  --color-accent: #B4532A;       /* Oxide Accent (Sparingly used) */
+  --color-adk: #3F5B4F;          /* Google ADK Lane Tone */
+  --color-crewai: #8A6A1F;       /* CrewAI Lane Tone */
+  --color-ok: #4E6B3A;           /* Passed / Verified */
+  --color-blocked: #9A3B2E;      /* Guardrail Blocked */
+
+  /* Typography */
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Borders & Radius */
+  --radius-sm: 2px;
+  --border-rule: 1px solid var(--color-rule);
+
+  /* Animation Tokens */
+  --motion-fast: 180ms;
+  --motion-normal: 320ms;
+  --motion-slow: 600ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-normal: 0ms;
+    --motion-slow: 0ms;
+  }
+}
+

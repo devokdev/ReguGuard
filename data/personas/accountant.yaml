@@ -1,0 +1,7 @@
+persona: accountant
+description: Technical and regulatory compliance query
+variants:
+  terse: "Assess Notification 10/2023 applicability for regular taxpayer AATO 7.5 Cr."
+  verbose: "Please examine Central Tax Notification 10/2023 amending Rule 48(4) and confirm whether aggregate turnover under Section 2(6) mandates immediate IRP onboarding."
+  structured_form: "Section: Rule 48(4); Aggregate Turnover: 7.5 Cr; Return: GSTR-3B; Scheme: Regular"
+

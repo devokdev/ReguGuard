@@ -1,0 +1,7 @@
+persona: owner
+description: Informal and vague queries from small business owner
+variants:
+  terse: "Do I need e-invoice now?"
+  verbose: "Hi, I run a small factory in Punjab making farm parts. People are saying the government lowered the limit. Can you check if I need to do anything?"
+  structured_form: "Business: Manufacturing; Turnover: 7.5 Cr; Query: e-invoicing applicability"
+

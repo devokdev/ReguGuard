@@ -1,0 +1,31 @@
+# ReguGuard Offline Benchmark Grid (Simplified E1–E4)
+# PRD §11.1: 4 Configs x 48 Cases = 192 runs (+ 54 persona runs)
+
+configs:
+  - id: E1
+    name: "Baseline Product"
+    messaging: blackboard
+    topology: sequential
+    reasoning: react
+    description: "Production System: Blackboard + Fixed Sequential + ReAct"
+
+  - id: E2
+    name: "P2P Messaging"
+    messaging: p2p
+    topology: sequential
+    reasoning: react
+    description: "Messaging Comparison: Forwarding payload without shared store"
+
+  - id: E3
+    name: "Parallel Topology"
+    messaging: blackboard
+    topology: parallel
+    reasoning: react
+    description: "Topology Comparison: Concurrent Change Detection || SME Profile"
+
+  - id: E4
+    name: "Single-Shot LLM"
+    messaging: none
+    topology: none
+    reasoning: single_shot
+    description: "Ablation Baseline: Single LLM call doing entire task without agents"

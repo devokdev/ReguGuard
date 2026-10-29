@@ -1,0 +1,30 @@
+# ReguGuard Dependencies (Pinned where verified)
+# Python 3.11+
+pydantic>=2.10.0,<3.0.0
+pydantic-settings>=2.0.0
+pytest>=8.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Web & API Frameworks
+fastapi>=0.115.0
+uvicorn>=0.30.0
+streamlit>=1.39.0
+
+# Data & Visualizations
+pandas>=2.2.0
+plotly>=5.24.0
+kaleido==0.2.1
+
+# Document parsing & Vector Database
+pymupdf>=1.24.0
+chromadb>=0.5.0
+
+# MCP (Model Context Protocol) SDK
+mcp>=1.1.0
+
+# Process Supervision
+supervisor>=4.2.5
+
+# Note: google-adk, crewai, a2a-sdk are pinned as respective agent steps are integrated
+

@@ -1,0 +1,19 @@
+# ReguGuard Token Pricing Configuration (USD per 1M tokens)
+# Groq free tier / pricing
+
+models:
+  llama-3.3-70b-versatile:
+    prompt_per_1m: 0.00
+    completion_per_1m: 0.00
+
+  gemini-1.5-flash:
+    prompt_per_1m: 0.075
+    completion_per_1m: 0.30
+
+  gemini-1.5-pro:
+    prompt_per_1m: 3.50
+    completion_per_1m: 10.50
+
+  text-embedding-004:
+    prompt_per_1m: 0.00
+    completion_per_1m: 0.0
