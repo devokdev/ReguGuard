@@ -46,12 +46,12 @@ def extract_thresholds(text: str) -> dict:
     """Extract rupee monetary turnover thresholds and dates using regex."""
     # Pattern e.g. "five hundred crore rupees", "10 crore rupees", "5 crore rupees"
     word_to_num = {
-        "one": 1, "two": 2, "five": 5, "ten": 10, "twenty": 20, "fifty": 50,
+        "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "ten": 10, "twenty": 20, "fifty": 50,
         "hundred": 100, "five hundred": 500
     }
 
     threshold_rupees = None
-    threshold_match = re.search(r'(\d+|five hundred|one|two|five|ten|twenty|fifty)\s*(crore|lakh)?\s*rupees', text, re.IGNORECASE)
+    threshold_match = re.search(r'(\d+|five hundred|one|two|three|four|five|ten|twenty|fifty)\s*(crore|lakh)?\s*rupees', text, re.IGNORECASE)
 
     if threshold_match:
         val_str = threshold_match.group(1).lower()

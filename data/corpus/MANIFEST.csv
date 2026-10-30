@@ -1,6 +1,10 @@
 doc_id,title,doc_date,effective_date,source_url,retrieved_on,synthetic,description
-notif_13_2020,Notification No. 13/2020-Central Tax,2020-03-21,2020-10-01,https://cbic.gov.in/notif-13-2020,2026-10-29,false,Initial e-invoicing turnover threshold set at 500 crore INR.
-notif_10_2023,Notification No. 10/2023-Central Tax,2023-05-10,2023-08-01,https://cbic.gov.in/notif-10-2023,2026-10-29,false,E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR.
-cir_170_2022,Circular No. 170/02/2022-GST,2022-07-06,2022-07-06,https://cbic.gov.in/cir-170-2022,2026-10-29,false,Mandatory reporting of ineligible input tax credit under Section 16(4) and reversals.
-notif_synthetic_01,Notification No. 99/2026-Central Tax (Synthetic),2026-06-01,2026-10-01,https://cbic.gov.in/synthetic-test,2026-10-29,true,Synthetic amendment reducing turnover threshold from 5 crore to 2 crore INR for test cases.
-
+notif_13_2020,Notification No. 13/2020-Central Tax (Base 500 Cr),2020-03-21,2020-10-01,https://cbic.gov.in/notif-13-2020,2026-10-29,false,Initial e-invoicing turnover threshold set at 500 crore INR.
+notif_01_2022,Notification No. 01/2022-Central Tax (20 Cr Limit),2022-02-24,2022-04-01,https://cbic.gov.in/notif-01-2022,2026-10-29,false,E-invoicing aggregate turnover threshold reduced from 50 crore to 20 crore INR.
+notif_17_2022,Notification No. 17/2022-Central Tax (10 Cr Limit),2022-08-01,2022-10-01,https://cbic.gov.in/notif-17-2022,2026-10-29,false,E-invoicing aggregate turnover threshold reduced from 20 crore to 10 crore INR.
+cir_170_2022,Circular No. 170/02/2022-GST (ITC Reversals),2022-07-06,2022-07-06,https://cbic.gov.in/cir-170-2022,2026-10-29,false,Mandatory reporting of ineligible input tax credit under Section 16(4) and reversals.
+notif_10_2023,Notification No. 10/2023-Central Tax (5 Cr Active Law),2023-05-10,2023-08-01,https://cbic.gov.in/notif-10-2023,2026-10-29,false,E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR.
+notif_04_2024,Notification No. 04/2024-Central Tax (30-Day IRP & 2FA),2024-04-15,2024-11-01,https://cbic.gov.in/notif-04-2024,2026-10-29,false,Mandatory 30-day IRP reporting window rule and 2FA authentication for >= 10 Cr taxpayers.
+notif_target_2025,Notification No. 25/2025-Central Tax (3 Cr Target Reform),2025-05-12,2025-10-01,https://cbic.gov.in/notif-25-2025,2026-10-29,true,Proposed amendment reducing statutory e-invoicing threshold from 5 crore to 3 crore INR.
+notif_synthetic_01,Notification No. 99/2026-Central Tax (2 Cr Future Target),2026-06-01,2026-10-01,https://cbic.gov.in/synthetic-test,2026-10-29,true,Synthetic amendment reducing turnover threshold from 5 crore to 2 crore INR for test cases.
+notif_target_2027,Notification No. 01/2027-Central Tax (1 Cr Universal B2B),2027-01-10,2027-04-01,https://cbic.gov.in/notif-01-2027,2026-10-29,true,Long-term roadmap notification extending mandatory e-invoicing to all B2B transactions >= 1 crore INR.

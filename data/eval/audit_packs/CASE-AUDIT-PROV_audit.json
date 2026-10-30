@@ -1,6 +1,6 @@
 {
   "case_id": "CASE-AUDIT-PROV",
-  "trace_id": "trace-bb2931a2",
+  "trace_id": "trace-4adf5b3d",
   "sme_id": "SME-01",
   "verdict": "impacted",
   "confidence": 0.95,
@@ -13,7 +13,7 @@
       "section": "Para 2",
       "verified": true,
       "producing_agent": "EvidenceVerificationCrew",
-      "span_id": "c0e68000"
+      "span_id": "f46e9351"
     }
   ],
   "action_plan": {
@@ -23,6 +23,6 @@
     "days_remaining": -1186,
     "priority": "high"
   },
-  "total_latency_s": 1.955,
-  "total_tokens": 1422
+  "total_latency_s": 1.015,
+  "total_tokens": 1443
 }

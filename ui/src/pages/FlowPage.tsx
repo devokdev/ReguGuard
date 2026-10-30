@@ -3,6 +3,7 @@ import { FlowThread } from '../components/FlowThread';
 import { BlackboardStrip, BlackboardNote } from '../components/BlackboardStrip';
 import { ReportNote, ReportData } from '../components/ReportNote';
 import { ExplainDrawer } from '../components/ExplainDrawer';
+import { RegulatoryComparisonVisualizer } from '../components/RegulatoryComparisonVisualizer';
 
 interface SME {
   sme_id: string;
@@ -17,6 +18,9 @@ interface Doc {
   doc_id: string;
   title: string;
   doc_date: string;
+  effective_date?: string;
+  synthetic?: boolean;
+  description?: string;
 }
 
 export const FlowPage: React.FC = () => {
@@ -250,12 +254,17 @@ export const FlowPage: React.FC = () => {
               .filter((d) => d.doc_id !== 'notif_13_2020')
               .map((d) => (
                 <option key={d.doc_id} value={d.doc_id}>
-                  {d.doc_id} (Reduces limit to 5 Cr)
+                  {d.title || d.doc_id}
                 </option>
               ))}
           </select>
-          <div className="mono" style={{ fontSize: '11px', color: 'var(--color-muted)', marginTop: '6px' }}>
-            Diffed against prior: notif_13_2020 (500 Cr rule)
+          {docs.find((d) => d.doc_id === selectedDocId)?.description && (
+            <div className="mono" style={{ fontSize: '11px', color: 'var(--color-accent)', marginTop: '6px' }}>
+              ℹ {docs.find((d) => d.doc_id === selectedDocId)?.description}
+            </div>
+          )}
+          <div className="mono" style={{ fontSize: '11px', color: 'var(--color-muted)', marginTop: '4px' }}>
+            Base comparison law: notif_13_2020 (500 Cr base gazette)
           </div>
         </div>
 
@@ -282,7 +291,17 @@ export const FlowPage: React.FC = () => {
         notes={notes}
       />
 
-      {report && <ReportNote report={report} />}
+      {report && (
+        <>
+          <ReportNote report={report} />
+          <RegulatoryComparisonVisualizer
+            report={report}
+            selectedSme={selectedSme}
+            selectedDocId={selectedDocId}
+            allSmes={smes}
+          />
+        </>
+      )}
 
       <ExplainDrawer
         conceptKey={selectedConcept}

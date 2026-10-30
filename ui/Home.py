@@ -146,6 +146,100 @@ if page == "Analyze Regulation":
                 f"**Owner:** {rep.action.owner} | **Deadline:** {rep.action.deadline} | **Priority:** {rep.action.priority.upper()}"
             )
 
+        # ---------------------------------------------------------------------
+        # NEW: REGULATORY IMPACT & NOTIFICATION COMPARISON VISUALIZATIONS
+        # ---------------------------------------------------------------------
+        st.divider()
+        st.markdown("### 📊 Regulatory Threshold & Notification Comparison Analytics")
+        st.caption("Visualizing current SME financials versus Gazette Notification changes (2020–2026 Target).")
+
+        viz_col1, viz_col2 = st.columns(2)
+
+        sme_turnover = selected_sme["aato_crore"]
+        prior_threshold = 10.0
+        new_threshold = 2.0 if doc_choice == "notif_synthetic_01" else 5.0
+
+        with viz_col1:
+            st.markdown("##### 1. Statutory Threshold vs SME Turnover (Crores INR)")
+            fig_thresh = go.Figure()
+            fig_thresh.add_trace(go.Bar(
+                x=["Prior Law (17/2022)", "Target Law (" + doc_choice + ")", selected_sme["name"]],
+                y=[prior_threshold, new_threshold, sme_turnover],
+                marker_color=["#8C857B", "#B4532A", "#2B4C3F" if sme_turnover > new_threshold else "#4E6B3A"],
+                text=[f"₹{prior_threshold} Cr", f"₹{new_threshold} Cr", f"₹{sme_turnover} Cr"],
+                textposition="auto"
+            ))
+            fig_thresh.add_hline(
+                y=new_threshold,
+                line_dash="dash",
+                line_color="#B4532A",
+                annotation_text=f"New Legal Ceiling: ₹{new_threshold} Cr",
+                annotation_position="top right"
+            )
+            fig_thresh.update_layout(
+                paper_bgcolor="#EDE9E0",
+                plot_bgcolor="#E4DFD3",
+                margin=dict(l=20, r=20, t=30, b=20),
+                height=320,
+                yaxis_title="Turnover (₹ Crores)",
+                font=dict(family="sans-serif", size=12)
+            )
+            st.plotly_chart(fig_thresh, use_container_width=True)
+
+        with viz_col2:
+            st.markdown("##### 2. 2020–2026 Gazette E-Invoicing Roadmap")
+            timeline_years = ["2020 (Oct)", "2021 (Apr)", "2022 (Apr)", "2022 (Oct)", "2023 (Aug)", "2026 (Oct)"]
+            timeline_limits = [500, 50, 20, 10, 5, 2]
+            fig_time = go.Figure()
+            fig_time.add_trace(go.Scatter(
+                x=timeline_years,
+                y=timeline_limits,
+                mode="lines+markers+text",
+                name="Statutory Limit",
+                line=dict(color="#B4532A", width=3),
+                marker=dict(size=10, color="#1C1B19"),
+                text=[f"₹{l} Cr" for l in timeline_limits],
+                textposition="top right"
+            ))
+            fig_time.add_hline(
+                y=sme_turnover,
+                line_dash="dot",
+                line_color="#2B4C3F",
+                annotation_text=f"{selected_sme['name']} (₹{sme_turnover} Cr)",
+                annotation_position="bottom left"
+            )
+            fig_time.update_layout(
+                paper_bgcolor="#EDE9E0",
+                plot_bgcolor="#E4DFD3",
+                margin=dict(l=20, r=20, t=30, b=20),
+                height=320,
+                yaxis_type="log",
+                yaxis_title="Turnover Limit (Log Scale Cr)",
+                font=dict(family="sans-serif", size=12)
+            )
+            st.plotly_chart(fig_time, use_container_width=True)
+
+        # 12 SME Cohort Impact Matrix
+        st.markdown("##### 3. All 12 SME Cohort Impact Comparison (Before vs After Law Change)")
+        cohort_df = pd.DataFrame(smes)
+        cohort_df["Old Rule Status (10 Cr)"] = cohort_df["aato_crore"].apply(
+            lambda x: "Mandated" if x > 10.0 else "Exempt"
+        )
+        cohort_df["New Law Status (" + str(new_threshold) + " Cr)"] = cohort_df.apply(
+            lambda r: "Exempt" if r["gst_registration"] == "composition" or r["aato_crore"] <= new_threshold else "MANDATED",
+            axis=1
+        )
+        cohort_df["Delta Status"] = cohort_df.apply(
+            lambda r: "🚨 Newly Impacted" if (r["Old Rule Status (10 Cr)"] == "Exempt" and r["New Law Status (" + str(new_threshold) + " Cr)"] == "MANDATED")
+            else ("⚠️ Already Mandated" if r["Old Rule Status (10 Cr)"] == "Mandated" else "✅ Remained Exempt"),
+            axis=1
+        )
+
+        st.dataframe(
+            cohort_df[["sme_id", "name", "industry", "state", "aato_crore", "Old Rule Status (10 Cr)", "New Law Status (" + str(new_threshold) + " Cr)", "Delta Status"]],
+            use_container_width=True
+        )
+
         # Download Report JSON
         st.download_button(
             "📥 Download Validated ImpactReport JSON",
