@@ -106,18 +106,41 @@ class LLMClient:
                 "delegations": ["monitor", "change_detection", "sme_profile", "impact", "evidence_action"]
             })
 
-        # Impact Agent mock verdict
+        # Impact Agent mock verdict: inspect prompt text for SME turnover and threshold
         if "impact analysis" in system.lower() or "verdict" in prompt_lower:
-            return json.dumps({
-                "verdict": "impacted",
-                "confidence": 0.94,
-                "reasoning_summary": (
-                    "The SME has an Annual Aggregate Turnover (AATO) of 7.5 Crore INR, which exceeds "
-                    "the newly lowered statutory e-invoicing threshold of 5 Crore INR prescribed in Para 2. "
-                    "Consequently, the SME is legally required to implement e-invoicing."
-                ),
-                "key_section": "Para 2"
-            })
+            # Dynamically determine verdict based on the case observation in the prompt
+            import re
+            turnover_match = re.search(r'Turnover:\s*([0-9.]+)\s*Cr', prompt)
+            turnover_cr = float(turnover_match.group(1)) if turnover_match else 7.5
+            
+            # Check if SME is already compliant or below threshold
+            einvoice_already = "e-inv enabled: true" in prompt.lower()
+            
+            if turnover_cr < 5.0 or einvoice_already:
+                return json.dumps({
+                    "verdict": "not_impacted",
+                    "confidence": 0.95,
+                    "reasoning_summary": f"SME AATO of {turnover_cr} Cr is below the 5 Cr statutory threshold or e-invoicing is already active.",
+                    "key_section": "Para 2"
+                })
+            elif "ambiguous" in prompt.lower() and (5.0 <= turnover_cr <= 5.5 and "b2c" in prompt.lower()):
+                return json.dumps({
+                    "verdict": "ambiguous",
+                    "confidence": 0.65,
+                    "reasoning_summary": "SME operations require human review to verify B2B vs B2C applicability.",
+                    "key_section": "Para 2"
+                })
+            else:
+                return json.dumps({
+                    "verdict": "impacted",
+                    "confidence": 0.95,
+                    "reasoning_summary": (
+                        f"The SME has an Annual Aggregate Turnover (AATO) of {turnover_cr} Crore INR, which exceeds "
+                        "the newly lowered statutory e-invoicing threshold of 5 Crore INR prescribed in Para 2. "
+                        "Consequently, the SME is legally required to implement e-invoicing."
+                    ),
+                    "key_section": "Para 2"
+                })
 
         # Evidence verification mock
         if "skeptic" in system.lower() or "verifier" in system.lower():
