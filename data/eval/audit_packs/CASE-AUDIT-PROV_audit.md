@@ -1,6 +1,6 @@
 # ReguGuard Audit Pack — Provenance & Verification Log
 **Case ID:** CASE-AUDIT-PROV  
-**Trace ID:** `trace-3e8a7c60`  
+**Trace ID:** `trace-386f14f3`  
 **Subject SME:** SME-01  
 **Mandatory Headline:** Potential regulatory impact detected — human review recommended  
 
@@ -9,7 +9,7 @@
 ## 1. Regulatory Impact Verdict
 - **Verdict:** `IMPACTED`
 - **Assessed Confidence:** 95.0%
-- **Summary:** The regulation diff indicates that the e-invoice mandate threshold has been lowered from 10 crore rupees to 5 crore rupees, effective 1st August 2023. The SME, Bharat Agro Implements Pvt Ltd, has a turnover of 7.5 crore rupees, which exceeds the new 5 crore rupees threshold. Consequently, the entity is now mandatorily required to generate e-invoices, whereas it was previously exempt under the higher threshold.
+- **Summary:** The regulation diff explicitly lowers the e-invoice mandate threshold from 500 Cr to 5 Cr effective 1st August 2023. Bharat Agro Implements Pvt Ltd has a turnover of 7.5 Cr, which exceeds the new 5 Cr threshold. Since the SME is currently not e-invoice enabled, they are now mandatorily required to comply.
 
 ## 2. Grounded Evidence Chain (Substring Verified)
 | Section | Source Doc | Quote | Verification Status | Producing Agent |

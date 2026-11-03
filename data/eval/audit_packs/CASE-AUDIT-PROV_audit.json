@@ -1,6 +1,6 @@
 {
   "case_id": "CASE-AUDIT-PROV",
-  "trace_id": "trace-3e8a7c60",
+  "trace_id": "trace-386f14f3",
   "sme_id": "SME-01",
   "verdict": "impacted",
   "confidence": 0.95,
@@ -13,16 +13,16 @@
       "section": "Para 2",
       "verified": true,
       "producing_agent": "EvidenceVerificationCrew",
-      "span_id": "1394a9bc"
+      "span_id": "7e8b9869"
     }
   ],
   "action_plan": {
     "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
     "owner": "Chief Financial Officer / Accounts Head",
     "deadline": "2023-08-01",
-    "days_remaining": -1188,
+    "days_remaining": -1190,
     "priority": "high"
   },
-  "total_latency_s": 2.554,
-  "total_tokens": 1437
+  "total_latency_s": 0.991,
+  "total_tokens": 1422
 }

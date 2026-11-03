@@ -18,11 +18,12 @@
 | **8** | Guardrails & Safety | 3-layer guardrails & PII masking | **MET** | [`src/guardrails/engine.py`](file:///c:/Users/karta/Desktop/projects/agentic_ai/src/guardrails/engine.py) | `tests/test_step7_guardrails.py` |
 | **9** | Observability & Provenance | Trace IDs, Spans, Provenance links | **MET** | [`src/observability/trace_store.py`](file:///c:/Users/karta/Desktop/projects/agentic_ai/src/observability/trace_store.py) | `tests/test_step4_adk.py` |
 | **10** | End-to-End Evaluation | Reproducible pipeline with metrics | **MET** | [`src/orchestrator.py`](file:///c:/Users/karta/Desktop/projects/agentic_ai/src/orchestrator.py) | `tests/test_step6_orchestrator.py` |
-| **11** | Cloud Deployment | Google Cloud Run containerization | **PREPARED** | `Dockerfile`, `deploy/cloudrun.sh` | Build audit |
+| **11** | Cloud Deployment | Google Cloud Run containerization | **MET / PREPARED** | `Dockerfile`, `deploy/cloudrun.sh`, `deploy/supervisord.conf` | Build audit |
 
 ---
 
 ### Phase-2 Vertical Slice Verification Summary:
-- **Total Tests Passing:** 27 unit & acceptance tests across all 8 P0 steps.
+- **Total Tests Passing:** 35 unit & integration tests passing (`pytest -v`).
 - **Accepted Vertical Slice:** An end-to-end multi-agent pipeline spanning Manager planning, Regulation fetching, clause-level diffing, SME profile loading, ReAct impact analysis, cross-framework A2A invocation to CrewAI's reflection verification flow, deterministic deadline computation, rule-based guardrails, and final Pydantic `ImpactReport` generation.
+- **Comparative Benchmarks:** 192 total runs evaluated across 4 configurations ($E_1$ to $E_4$) with latency and token boxplots available live in the UI.
 
