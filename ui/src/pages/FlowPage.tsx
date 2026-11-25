@@ -23,9 +23,35 @@ interface Doc {
   description?: string;
 }
 
+const FALLBACK_SMES: SME[] = [
+  { sme_id: 'SME-01', name: 'Bharat Agro Implements Pvt Ltd', industry: 'Agricultural Machinery', aato_crore: 7.5, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-02', name: 'Surat Textile Weavers LLP', industry: 'Textiles', aato_crore: 3.8, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-03', name: 'Deccan Precision Castings', industry: 'Automotive Engineering', aato_crore: 12.0, einvoice_enabled: true, gst_registration: 'regular' },
+  { sme_id: 'SME-04', name: 'Malabar Spices Traders', industry: 'Retail & Wholesale', aato_crore: 1.2, einvoice_enabled: false, gst_registration: 'composition' },
+  { sme_id: 'SME-05', name: 'Noida FinTech Solvers Pvt Ltd', industry: 'Software & IT', aato_crore: 5.5, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-06', name: 'Kalinga Iron Foundry', industry: 'Metals & Mining', aato_crore: 22.0, einvoice_enabled: true, gst_registration: 'regular' },
+  { sme_id: 'SME-07', name: 'Jaipur Handicrafts Co', industry: 'Handicrafts & Decor', aato_crore: 4.9, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-08', name: 'Bengaluru Cloud Labs', industry: 'Information Technology', aato_crore: 5.1, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-09', name: 'Coimbatore Pumps & Motors', industry: 'Electrical Machinery', aato_crore: 9.2, einvoice_enabled: true, gst_registration: 'regular' },
+  { sme_id: 'SME-10', name: 'Ludhiana Woollen Mills', industry: 'Apparel', aato_crore: 6.3, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-11', name: 'Guwahati Organic Teas', industry: 'Food Processing', aato_crore: 2.1, einvoice_enabled: false, gst_registration: 'regular' },
+  { sme_id: 'SME-12', name: 'Hyderabad Pharma Packaging', industry: 'Packaging Solutions', aato_crore: 14.5, einvoice_enabled: true, gst_registration: 'regular' },
+];
+
+const FALLBACK_DOCS: Doc[] = [
+  { doc_id: 'notif_10_2023', title: 'Notification No. 10/2023-Central Tax (5 Cr Active Law)', doc_date: '2023-05-10', effective_date: '2023-08-01', description: 'E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR.' },
+  { doc_id: 'notif_17_2022', title: 'Notification No. 17/2022-Central Tax (10 Cr Limit)', doc_date: '2022-08-01', effective_date: '2022-10-01', description: 'E-invoicing aggregate turnover threshold reduced from 20 crore to 10 crore INR.' },
+  { doc_id: 'notif_01_2022', title: 'Notification No. 01/2022-Central Tax (20 Cr Limit)', doc_date: '2022-02-24', effective_date: '2022-04-01', description: 'E-invoicing aggregate turnover threshold reduced from 50 crore to 20 crore INR.' },
+  { doc_id: 'cir_170_2022', title: 'Circular No. 170/02/2022-GST (ITC Reversals)', doc_date: '2022-07-06', effective_date: '2022-07-06', description: 'Mandatory reporting of ineligible input tax credit under Section 16(4) and reversals.' },
+  { doc_id: 'notif_04_2024', title: 'Notification No. 04/2024-Central Tax (30-Day IRP & 2FA)', doc_date: '2024-04-15', effective_date: '2024-11-01', description: 'Mandatory 30-day IRP reporting window rule and 2FA authentication for >= 10 Cr taxpayers.' },
+  { doc_id: 'notif_target_2025', title: 'Notification No. 25/2025-Central Tax (3 Cr Target Reform)', doc_date: '2025-05-12', effective_date: '2025-10-01', description: 'Proposed amendment reducing statutory e-invoicing threshold from 5 crore to 3 crore INR.' },
+  { doc_id: 'notif_synthetic_01', title: 'Notification No. 99/2026-Central Tax (2 Cr Future Target)', doc_date: '2026-06-01', effective_date: '2026-10-01', description: 'Synthetic amendment reducing turnover threshold from 5 crore to 2 crore INR for test cases.' },
+  { doc_id: 'notif_target_2027', title: 'Notification No. 01/2027-Central Tax (1 Cr Universal B2B)', doc_date: '2027-01-10', effective_date: '2027-04-01', description: 'Long-term roadmap notification extending mandatory e-invoicing to all B2B transactions >= 1 crore INR.' },
+];
+
 export const FlowPage: React.FC = () => {
-  const [smes, setSmes] = useState<SME[]>([]);
-  const [docs, setDocs] = useState<Doc[]>([]);
+  const [smes, setSmes] = useState<SME[]>(FALLBACK_SMES);
+  const [docs, setDocs] = useState<Doc[]>(FALLBACK_DOCS);
   const [selectedSmeId, setSelectedSmeId] = useState<string>('SME-01');
   const [selectedDocId, setSelectedDocId] = useState<string>('notif_10_2023');
 

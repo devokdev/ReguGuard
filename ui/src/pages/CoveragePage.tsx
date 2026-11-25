@@ -21,7 +21,7 @@ export const CoveragePage: React.FC = () => {
     { num: 8, title: 'Guardrails & Safety', desc: '3-layer deterministic safety, PII masking (GSTIN/PAN).', status: 'MET', evidence: 'src/guardrails/engine.py', test: 'tests/test_step7_guardrails.py' },
     { num: 9, title: 'Observability & Provenance', desc: 'Trace IDs, DAG Provenance Graph, JSON/Markdown audit packs.', status: 'MET', evidence: 'src/observability/provenance.py', test: 'tests/test_steps11_12.py' },
     { num: 10, title: 'End-to-End Evaluation', desc: '48 labelled cases, 6 configs, 288 runs, boxplots & metrics.', status: 'MET', evidence: 'eval/run_benchmark.py', test: 'data/eval/' },
-    { num: 11, title: 'Cloud Deployment', desc: 'Production Docker container with Supervisord for Google Cloud Run.', status: 'PREPARED', evidence: 'Dockerfile & cloudrun.sh', test: 'deploy/' }
+    { num: 11, title: 'Cloud Deployment', desc: 'Production multi-stage Docker container & Vercel web deployment verified.', status: 'MET', evidence: 'Dockerfile, docker-compose.yml & vercel.json', test: 'docker run test' }
   ];
 
   return (
