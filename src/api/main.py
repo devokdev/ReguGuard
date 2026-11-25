@@ -20,6 +20,8 @@ from src.orchestrator import ReguGuardOrchestrator
 from src.mcp_servers.sme_db import list_smes
 from src.mcp_servers.doc_fetcher import list_new_documents
 from src.api.stream import router as stream_router
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 app = FastAPI(
     title="ReguGuard API",
@@ -97,4 +99,11 @@ def get_agent_metrics():
 @app.get("/api/heatmaps/blackboard-access")
 def get_blackboard_matrix():
     return blackboard.get_access_counts()
+
+
+# Mount compiled frontend static assets if available (for Docker / Unified Deployments)
+static_dir = Path("static")
+if static_dir.exists():
+    app.mount("/", StaticFiles(directory=str(static_dir), html=True), name="static")
+
 

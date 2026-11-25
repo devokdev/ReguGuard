@@ -1,0 +1,12 @@
+services:
+  reguguard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reguguard-app
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+    restart: unless-stopped

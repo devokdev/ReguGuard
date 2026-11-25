@@ -86,9 +86,9 @@ export const BoardPage: React.FC = () => {
       </div>
 
       {/* Dual Column Layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(360px, 1fr)', gap: '32px', alignItems: 'start' }}>
         {/* Versioned Entries List */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           <span className="small-caps" style={{ display: 'block', marginBottom: '12px' }}>
             Versioned Audit Timeline ({entries.length} Entries)
           </span>
@@ -111,8 +111,9 @@ export const BoardPage: React.FC = () => {
                   backgroundColor: 'var(--color-surface)',
                   border: 'var(--border-rule)',
                   borderRadius: 'var(--radius-sm)',
+                  overflow: 'hidden',
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
                     <div style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
                       <span className="small-caps mono" style={{ color: 'var(--color-accent)' }}>
                         v{e.version}
@@ -127,14 +128,19 @@ export const BoardPage: React.FC = () => {
                   <pre className="mono" style={{
                     fontSize: '11px',
                     backgroundColor: 'var(--color-paper)',
-                    padding: '8px 10px',
+                    padding: '10px 12px',
                     borderRadius: 'var(--radius-sm)',
                     overflowX: 'auto',
-                    maxHeight: '120px',
+                    overflowY: 'auto',
+                    maxHeight: '180px',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word',
+                    lineHeight: '1.45',
+                    border: '1px solid var(--color-rule-light)',
                   }}>
                     {typeof e.value === 'object' ? JSON.stringify(e.value, null, 2) : String(e.value)}
                   </pre>
-                  <div className="mono" style={{ fontSize: '10px', color: 'var(--color-muted)', marginTop: '6px' }}>
+                  <div className="mono" style={{ fontSize: '10px', color: 'var(--color-muted)', marginTop: '8px' }}>
                     {e.ts}
                   </div>
                 </div>
@@ -143,39 +149,41 @@ export const BoardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Access Frequency Matrix */}
-        <div>
+        {/* Access Frequency Matrix (Sticky Sidebar with max-height scroll) */}
+        <div style={{ position: 'sticky', top: '24px', minWidth: 0 }}>
           <span className="small-caps" style={{ display: 'block', marginBottom: '12px' }}>
             Agent Access Matrix (Criterion 5 Heatmap)
           </span>
           <div style={{
-            padding: '16px',
             backgroundColor: 'var(--color-surface)',
             border: 'var(--border-rule)',
             borderRadius: 'var(--radius-sm)',
+            overflow: 'hidden',
           }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
-              <thead>
-                <tr style={{ borderBottom: 'var(--border-rule)', textAlign: 'left' }}>
-                  <th style={{ padding: '8px' }}>Agent</th>
-                  <th style={{ padding: '8px' }}>Key</th>
-                  <th style={{ padding: '8px', textAlign: 'right' }}>Reads</th>
-                  <th style={{ padding: '8px', textAlign: 'right' }}>Writes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(accessMatrix).flatMap(([agent, keys]) =>
-                  Object.entries(keys).map(([key, counts]) => (
-                    <tr key={`${agent}-${key}`} style={{ borderBottom: '1px solid var(--color-rule-light)' }}>
-                      <td className="mono" style={{ padding: '6px 8px', color: 'var(--color-ink)' }}>{agent}</td>
-                      <td className="mono" style={{ padding: '6px 8px', color: 'var(--color-muted)' }}>{key}</td>
-                      <td className="mono" style={{ padding: '6px 8px', textAlign: 'right' }}>{counts.reads}</td>
-                      <td className="mono" style={{ padding: '6px 8px', textAlign: 'right', fontWeight: 600, color: 'var(--color-accent)' }}>{counts.writes}</td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
+            <div style={{ maxHeight: 'calc(100vh - 180px)', overflowY: 'auto', padding: '12px' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
+                <thead>
+                  <tr style={{ borderBottom: '2px solid var(--color-ink)', textAlign: 'left', position: 'sticky', top: 0, backgroundColor: 'var(--color-surface)' }}>
+                    <th style={{ padding: '8px 6px' }}>Agent</th>
+                    <th style={{ padding: '8px 6px' }}>Key</th>
+                    <th style={{ padding: '8px 6px', textAlign: 'right' }}>Reads</th>
+                    <th style={{ padding: '8px 6px', textAlign: 'right' }}>Writes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.entries(accessMatrix).flatMap(([agent, keys]) =>
+                    Object.entries(keys).map(([key, counts]) => (
+                      <tr key={`${agent}-${key}`} style={{ borderBottom: '1px solid var(--color-rule-light)' }}>
+                        <td className="mono" style={{ padding: '6px', color: 'var(--color-ink)', fontSize: '11px', whiteSpace: 'nowrap' }}>{agent}</td>
+                        <td className="mono" style={{ padding: '6px', color: 'var(--color-muted)', fontSize: '11px' }}>{key}</td>
+                        <td className="mono" style={{ padding: '6px', textAlign: 'right', fontSize: '11px' }}>{counts.reads}</td>
+                        <td className="mono" style={{ padding: '6px', textAlign: 'right', fontWeight: 600, color: 'var(--color-accent)', fontSize: '11px' }}>{counts.writes}</td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

@@ -20,8 +20,8 @@ kaleido==0.2.1
 pymupdf>=1.24.0
 chromadb>=0.5.0
 
-# MCP (Model Context Protocol) SDK
-mcp>=1.1.0
+# MCP (Model Context Protocol) SDK (Pinned <2.0 for FastMCP compatibility)
+mcp>=1.1.0,<2.0.0
 
 # Process Supervision
 supervisor>=4.2.5
