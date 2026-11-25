@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import fallbackTraces from '../data/fallback_traces.json';
 
 interface TraceSpan {
   trace_id: string;
   span_id: string;
-  parent_span_id?: string;
+  parent_span_id?: string | null;
   agent: string;
   framework: string;
   kind: string;
@@ -18,23 +19,29 @@ interface TraceSpan {
 
 export const TracesPage: React.FC = () => {
   const [traceId, setTraceId] = useState<string>('trace-test-564d7c');
-  const [spans, setSpans] = useState<TraceSpan[]>([]);
-  const [selectedSpan, setSelectedSpan] = useState<TraceSpan | null>(null);
+  const [spans, setSpans] = useState<TraceSpan[]>(fallbackTraces as unknown as TraceSpan[]);
+  const [selectedSpan, setSelectedSpan] = useState<TraceSpan | null>((fallbackTraces[0] || null) as unknown as TraceSpan);
   const [loading, setLoading] = useState<boolean>(false);
 
   const fetchSpans = (id: string) => {
     setLoading(true);
     fetch(`/api/traces/${id}`)
-      .then((res) => res.json())
+      .then((res) => {
+        const contentType = res.headers.get('content-type');
+        if (res.ok && contentType && contentType.includes('application/json')) {
+          return res.json();
+        }
+        return null;
+      })
       .then((data) => {
-        if (Array.isArray(data)) {
+        if (Array.isArray(data) && data.length > 0) {
           setSpans(data);
-          if (data.length > 0) setSelectedSpan(data[0]);
+          setSelectedSpan(data[0]);
         }
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Failed to load spans:', err);
+        console.warn('Using fallback trace spans:', err);
         setLoading(false);
       });
   };

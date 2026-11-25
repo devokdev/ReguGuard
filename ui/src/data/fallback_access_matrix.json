@@ -1,0 +1,158 @@
+{
+  "ActionPlannerCrew": {
+    "action_plan": {
+      "reads": 0,
+      "writes": 412
+    }
+  },
+  "ChangeDetection": {
+    "diff": {
+      "reads": 0,
+      "writes": 417
+    },
+    "new_doc": {
+      "reads": 407,
+      "writes": 0
+    },
+    "prior_doc": {
+      "reads": 407,
+      "writes": 0
+    }
+  },
+  "EvidenceVerificationCrew": {
+    "evidence": {
+      "reads": 0,
+      "writes": 412
+    },
+    "impact_verdict": {
+      "reads": 405,
+      "writes": 0
+    },
+    "new_doc": {
+      "reads": 412,
+      "writes": 0
+    }
+  },
+  "ImpactAnalysis": {
+    "impact_verdict": {
+      "reads": 0,
+      "writes": 414
+    },
+    "diff": {
+      "reads": 417,
+      "writes": 0
+    },
+    "new_doc": {
+      "reads": 408,
+      "writes": 0
+    },
+    "sme_profile": {
+      "reads": 417,
+      "writes": 0
+    }
+  },
+  "Manager": {
+    "plan": {
+      "reads": 0,
+      "writes": 393
+    },
+    "status": {
+      "reads": 0,
+      "writes": 393
+    }
+  },
+  "RegulationMonitor": {
+    "clauses": {
+      "reads": 0,
+      "writes": 407
+    },
+    "new_doc": {
+      "reads": 0,
+      "writes": 424
+    },
+    "prior_doc": {
+      "reads": 0,
+      "writes": 407
+    }
+  },
+  "SMEProfile": {
+    "sme_profile": {
+      "reads": 0,
+      "writes": 417
+    }
+  },
+  "adk_agent": {
+    "sample_key": {
+      "reads": 0,
+      "writes": 8
+    }
+  },
+  "test": {
+    "diff": {
+      "reads": 1,
+      "writes": 2
+    },
+    "sme_profile": {
+      "reads": 1,
+      "writes": 2
+    }
+  },
+  "adk_client": {
+    "action_plan": {
+      "reads": 7,
+      "writes": 0
+    },
+    "evidence": {
+      "reads": 7,
+      "writes": 0
+    }
+  },
+  "crewai_agent": {
+    "sample_key": {
+      "reads": 8,
+      "writes": 0
+    }
+  },
+  "pipeline_observer": {
+    "action_plan": {
+      "reads": 125,
+      "writes": 0
+    },
+    "clauses": {
+      "reads": 187,
+      "writes": 0
+    },
+    "diff": {
+      "reads": 187,
+      "writes": 0
+    },
+    "evidence": {
+      "reads": 125,
+      "writes": 0
+    },
+    "impact_verdict": {
+      "reads": 187,
+      "writes": 0
+    },
+    "new_doc": {
+      "reads": 187,
+      "writes": 0
+    },
+    "plan": {
+      "reads": 187,
+      "writes": 0
+    },
+    "prior_doc": {
+      "reads": 187,
+      "writes": 0
+    },
+    "sme_profile": {
+      "reads": 187,
+      "writes": 0
+    },
+    "status": {
+      "reads": 187,
+      "writes": 0
+    }
+  }
+}

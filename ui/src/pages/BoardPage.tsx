@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import fallbackEntries from '../data/fallback_blackboard.json';
+import fallbackMatrix from '../data/fallback_access_matrix.json';
 
 interface BlackboardEntry {
   id: number;
@@ -13,20 +15,26 @@ interface BlackboardEntry {
 
 export const BoardPage: React.FC = () => {
   const [caseId, setCaseId] = useState<string>('CASE-STEP5-A2A');
-  const [entries, setEntries] = useState<BlackboardEntry[]>([]);
-  const [accessMatrix, setAccessMatrix] = useState<Record<string, Record<string, { reads: number; writes: number }>>>({});
+  const [entries, setEntries] = useState<BlackboardEntry[]>(fallbackEntries as BlackboardEntry[]);
+  const [accessMatrix, setAccessMatrix] = useState<Record<string, Record<string, { reads: number; writes: number }>>>(fallbackMatrix as any);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchHistory = (id: string) => {
     setIsLoading(true);
     fetch(`/api/blackboard/${id}`)
-      .then((res) => res.json())
+      .then((res) => {
+        const contentType = res.headers.get('content-type');
+        if (res.ok && contentType && contentType.includes('application/json')) {
+          return res.json();
+        }
+        return null;
+      })
       .then((data) => {
-        if (Array.isArray(data)) setEntries(data);
+        if (Array.isArray(data) && data.length > 0) setEntries(data);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error('Failed to fetch blackboard:', err);
+        console.warn('Using fallback blackboard history:', err);
         setIsLoading(false);
       });
   };
@@ -34,9 +42,17 @@ export const BoardPage: React.FC = () => {
   useEffect(() => {
     fetchHistory(caseId);
     fetch('/api/heatmaps/blackboard-access')
-      .then((res) => res.json())
-      .then((data) => setAccessMatrix(data))
-      .catch((err) => console.error('Failed to load matrix:', err));
+      .then((res) => {
+        const contentType = res.headers.get('content-type');
+        if (res.ok && contentType && contentType.includes('application/json')) {
+          return res.json();
+        }
+        return null;
+      })
+      .then((data) => {
+        if (data && Object.keys(data).length > 0) setAccessMatrix(data);
+      })
+      .catch((err) => console.warn('Using fallback matrix:', err));
   }, []);
 
   return (

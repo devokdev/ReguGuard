@@ -1,0 +1,429 @@
+[
+  {
+    "id": 26,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 1,
+    "ts": "2026-10-29T18:32:33.730928",
+    "trace_id": "trace-a2a-2e2530"
+  },
+  {
+    "id": 27,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Turnover threshold lowered to 5 crore rupees mandating e-invoicing.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 1,
+    "ts": "2026-10-29T18:32:33.744055",
+    "trace_id": "trace-a2a-2e2530"
+  },
+  {
+    "id": 28,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1186,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 1,
+    "ts": "2026-10-29T18:32:33.765396",
+    "trace_id": "trace-a2a-2e2530"
+  },
+  {
+    "id": 48,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 2,
+    "ts": "2026-10-29T18:34:39.802178",
+    "trace_id": "trace-a2a-7b68a4"
+  },
+  {
+    "id": 49,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Turnover threshold lowered to 5 crore rupees mandating e-invoicing.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 2,
+    "ts": "2026-10-29T18:34:39.832295",
+    "trace_id": "trace-a2a-7b68a4"
+  },
+  {
+    "id": 50,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1186,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 2,
+    "ts": "2026-10-29T18:34:39.870782",
+    "trace_id": "trace-a2a-7b68a4"
+  },
+  {
+    "id": 615,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 3,
+    "ts": "2026-10-29T18:45:18.926238",
+    "trace_id": "trace-a2a-231e4a"
+  },
+  {
+    "id": 616,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Turnover threshold lowered to 5 crore rupees mandating e-invoicing.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 3,
+    "ts": "2026-10-29T18:45:18.943199",
+    "trace_id": "trace-a2a-231e4a"
+  },
+  {
+    "id": 617,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1186,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 3,
+    "ts": "2026-10-29T18:45:18.966784",
+    "trace_id": "trace-a2a-231e4a"
+  },
+  {
+    "id": 711,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 4,
+    "ts": "2026-10-29T18:46:46.066446",
+    "trace_id": "trace-a2a-772ecd"
+  },
+  {
+    "id": 712,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Turnover threshold lowered to 5 crore rupees mandating e-invoicing.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 4,
+    "ts": "2026-10-29T18:46:46.083819",
+    "trace_id": "trace-a2a-772ecd"
+  },
+  {
+    "id": 713,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1186,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 4,
+    "ts": "2026-10-29T18:46:46.108077",
+    "trace_id": "trace-a2a-772ecd"
+  },
+  {
+    "id": 1017,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 5,
+    "ts": "2026-10-29T20:07:36.320829",
+    "trace_id": "trace-a2a-bf6f91"
+  },
+  {
+    "id": 1018,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Statutory rules under notif_10_2023 analyzed against SME operations.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 5,
+    "ts": "2026-10-29T20:07:36.377747",
+    "trace_id": "trace-a2a-bf6f91"
+  },
+  {
+    "id": 1019,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1186,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 5,
+    "ts": "2026-10-29T20:07:36.437211",
+    "trace_id": "trace-a2a-bf6f91"
+  },
+  {
+    "id": 1089,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax (5 Cr Active Law)",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 6,
+    "ts": "2026-10-31T19:52:33.281198",
+    "trace_id": "trace-a2a-f13f48"
+  },
+  {
+    "id": 1090,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Statutory rules under notif_10_2023 analyzed against SME operations.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 6,
+    "ts": "2026-10-31T19:52:33.315444",
+    "trace_id": "trace-a2a-f13f48"
+  },
+  {
+    "id": 1091,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1188,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 6,
+    "ts": "2026-10-31T19:52:33.353582",
+    "trace_id": "trace-a2a-f13f48"
+  },
+  {
+    "id": 4056,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "new_doc",
+    "value": {
+      "status": "ok",
+      "doc_id": "notif_10_2023",
+      "content": "GOVERNMENT OF INDIA\nMINISTRY OF FINANCE\nDEPARTMENT OF REVENUE\nCENTRAL BOARD OF INDIRECT TAXES AND CUSTOMS\n\nNotification No. 10/2023 \u2013 Central Tax\nNew Delhi, the 10th May, 2023\n\nG.S.R. 350(E).\u2014In exercise of the powers conferred by sub-rule (4) of rule 48 of the Central Goods and Services Tax Rules, 2017, the Government, on the recommendations of the Council, hereby makes the following further amendment in the notification of the Government of India in the Ministry of Finance (Department of Revenue), No. 13/2020 \u2013 Central Tax, published in the Gazette of India, Extraordinary, Part II, Section 3, Sub-section (i), vide number G.S.R. 196(E), dated the 21st March, 2020, namely:\u2014\n\nIn the said notification, in the first paragraph, with effect from the 1st day of August, 2023, for the words \"ten crore rupees\", the words \"five crore rupees\" shall be substituted.\n\nPara 2: A registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees shall mandatorily generate e-invoices with effect from the 1st day of August, 2023.\n\n",
+      "metadata": {
+        "doc_id": "notif_10_2023",
+        "title": "Notification No. 10/2023-Central Tax (5 Cr Active Law)",
+        "doc_date": "2023-05-10",
+        "effective_date": "2023-08-01",
+        "source_url": "https://cbic.gov.in/notif-10-2023",
+        "retrieved_on": "2026-10-29",
+        "synthetic": "false",
+        "description": "E-invoicing aggregate turnover threshold reduced from 10 crore to 5 crore INR."
+      }
+    },
+    "agent": "RegulationMonitor",
+    "version": 7,
+    "ts": "2026-11-03T04:01:50.981382",
+    "trace_id": "trace-a2a-a221e4"
+  },
+  {
+    "id": 4057,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "evidence",
+    "value": [
+      {
+        "claim": "Statutory rules under notif_10_2023 analyzed against SME operations.",
+        "source_doc_id": "notif_10_2023",
+        "section": "Para 2",
+        "version": "1.0",
+        "effective_date": "2023-08-01",
+        "quote": "registered person whose aggregate turnover in any preceding financial year from 2017-18 onwards exceeds five crore rupees",
+        "verified": true,
+        "verifier_notes": "Skeptic verified: exact substring found in official gazette text."
+      }
+    ],
+    "agent": "EvidenceVerificationCrew",
+    "version": 7,
+    "ts": "2026-11-03T04:01:51.002753",
+    "trace_id": "trace-a2a-a221e4"
+  },
+  {
+    "id": 4058,
+    "case_id": "CASE-STEP5-A2A",
+    "key": "action_plan",
+    "value": {
+      "action": "Register on the GST e-invoice portal (IRP) and configure ERP for automated IRN/QR code generation.",
+      "owner": "Chief Financial Officer / Accounts Head",
+      "deadline": "2023-08-01",
+      "days_remaining": -1190,
+      "priority": "high"
+    },
+    "agent": "ActionPlannerCrew",
+    "version": 7,
+    "ts": "2026-11-03T04:01:51.035759",
+    "trace_id": "trace-a2a-a221e4"
+  }
+]
